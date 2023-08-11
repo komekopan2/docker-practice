@@ -4,13 +4,13 @@
  * connect
  */
 
-$host = '???';
-$port = '???';
-$database = '???';
+$host = 'db';
+$port = '3306';
+$database = 'event';
 $dsn = sprintf('mysql:host=%s; port=%s; dbname=%s;', $host, $port, $database);
 
-$username = '???';
-$password = '???';
+$username = 'user';
+$password = 'password';
 
 $pdo = new PDO($dsn, $username, $password);
 
@@ -44,8 +44,8 @@ echo '<div style="width: 40rem; margin-top: 2rem; margin-left: auto; margin-righ
               <th style="width: 25%;">Sent at</th>
             </tr>';
 foreach ($select as $row) {
-    $mark = $row['result'] ? '✅' : '❌';
-    echo "  <tr>
+  $mark = $row['result'] ? '✅' : '❌';
+  echo "  <tr>
               <td style='font-size: 0.75rem;'>{$mark}</td>
               <td>{$row['sent_to']}</td>
               <td>{$row['subject']}</td>
